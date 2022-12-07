@@ -14,17 +14,35 @@
         document.write(frase);
         pulaLinha();
 }
+
 function calculaImc(altura, peso) {
 
     return peso / (altura * altura);
 }
+
 var nome = prompt("Informe seu nome");
-var alturaInformada = prompt(nome+", Informe sua Altura ");
-var pesoInformado = prompt(nome+", informe o seu Peso ");
+var alturaInformada = parseFloat(prompt(nome+", Informe sua Altura "));
+var pesoInformado = parseFloat(prompt(nome+", informe o seu Peso "));
 
-var imc = calculaImc(alturaInformada, pesoInformado)
+var imc = calculaImc(alturaInformada, pesoInformado);
 
-document.write(nome+", o seu IMC é: "+imc)
+mostra(nome+", o seu IMC é: "+imc);
+
+if(imc < 18.5) {
+
+mostra(nome+", está abaixo do recomendado");
+}
+
+if(imc > 35) {
+
+mostra(nome+", está acima do recomendado");
+}
+
+if(imc >= 18.5 && imc <= 35) {
+
+mostra(nome+", seu IMC está excelente!");
+}
+
 /**var imcFlavio = calculaImc(1.71, 73);
 var imcAmigo = calculaImc(1.72, 68);
 
